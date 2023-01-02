@@ -15,7 +15,7 @@ spec:
         app: js-demo1
     spec:
       containers:
-        - image: quay.io/openshift-pipeline/js-demo1:latest
+        - image: quay.io/openshift-pipeline/js-demo1
           imagePullPolicy: Always
           name: node-demo1
           ports:
