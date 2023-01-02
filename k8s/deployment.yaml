@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: node-demo1
-  name: node-demo1
+    app: js-demo1
+  name: js-demo1
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: node-demo1
+      app: js-demo1
   template:
     metadata:
       labels:
-        app: node-demo1
+        app: js-demo1
     spec:
       containers:
         - image: quay.io/openshift-pipeline/do180:latest
