@@ -2,12 +2,12 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: node-demo1
-  name: node-demo1
+    app: js-demo1
+  name: js-demo1
 spec:
   port:
     targetPort: 10000-tcp
   to:
     kind: Service
-    name: node-demo1
+    name: js-demo1
     weight: 100
