@@ -1,21 +1,21 @@
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
-  name: qotd
+  name: node-demo1
   labels:
-    app: qotd
+    app: node-demo1
 spec:
   selector:
-    app: qotd
+    app: node-demo1
   replicas: 1
   template:
     metadata:
       labels:
-        app: qotd
+        app: node-demo1
     spec:
       containers:
-        - name: qotd
-          image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/qotd:latest
+        - name: node-demo1
+          image: image-registry.openshift-image-registry.svc:5000/node-demo/node-demo1:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 10000
@@ -25,8 +25,8 @@ spec:
   - imageChangeParams:
       automatic: true
       containerNames:
-      - qotd
+      - node-demo1
       from:
         kind: ImageStreamTag
-        name: qotd:latest
+        name: node-demo1:latest
     type: ImageChange
