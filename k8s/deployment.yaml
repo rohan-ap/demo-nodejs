@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: node-demo1
+  name: node-demo1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-demo1
+  template:
+    metadata:
+      labels:
+        app: node-demo1
+    spec:
+      containers:
+        - image: quay.io/openshift-pipeline/do180:latest
+          imagePullPolicy: Always
+          name: node-demo1
+          ports:
+            - containerPort: 10000
+              protocol: TCP
+            - containerPort: 9090
+              protocol: TCP
