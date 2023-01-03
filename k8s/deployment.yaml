@@ -15,9 +15,9 @@ spec:
         app: js-demo1
     spec:
       containers:
-        - image: quay.io/nodejs/js-demo1:latest
+        - image: quay.io/openshift-pipeline/js-demo1:latest
           imagePullPolicy: Always
-          name: node-demo1
+          name: js-demo1
           ports:
             - containerPort: 10000
               protocol: TCP
