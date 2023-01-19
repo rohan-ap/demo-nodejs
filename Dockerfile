@@ -1,14 +1,14 @@
-FROM node:12
+FROM docker.io/library/node:12.16.1-alpine
 
-WORKDIR /usr/src/app
+ENV NODE_ENV production
+ENV PORT 8080
 
-COPY package*.json ./
-
+RUN mkdir /app
+COPY public /app/public
+COPY app.js /app/
+COPY package.json /app/package.json
+COPY routes /app/routes
+WORKDIR /app
 RUN npm install
 
-COPY . .
-
-EXPOSE 10000
-
-CMD [ "node", "app.js" ]
-
+CMD ["node", "app.js"]
